@@ -1,0 +1,315 @@
+@import 'icons.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+// background colors
+@background_color: #222;
+@background_color_active: #111;
+
+// font and icon colors
+@color_1: #fff;
+@color_2: #ccc;
+@color_3: #aaa;
+@color_4: #888;
+@color_5: #444;
+
+// line colors
+@line_color: @color_5;
+@line_color_active: @color_4;
+
+// font sizes
+@font_size_large: 32px;
+@font_size_small: 14px;
+
+// animations
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// mixin for instruction label
+.instruction-label {
+  font-size: 18px;
+  letter-spacing: 0.7px;
+  color: @color_3;
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+body, html, #app {
+  width: 100%;
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body {
+  overflow: hidden;
+  background: @background_color;
+}
+
+body, p, ul, li, a {
+  margin: 0;
+  padding: 0;
+}
+
+.exit-button {
+  color: @color_2;
+  font-size: @font_size_large;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: @background_color_active;
+  display: flex;
+  cursor: pointer;
+}
+.exit-button:hover {
+  opacity: 0.8;
+}
+  .exit-button .fa {
+    margin: auto;
+  }
+
+.loader {
+  display: none;
+  margin: auto;
+  text-align: center;
+}
+.loading-true .loader {
+  display: block;
+}
+.loading-false .loader {
+  display: none;
+}
+  .loader .fa {
+    display: block;
+    color: @color_2;   
+    font-size: 28px;
+  }
+  .loader.error-false .fa.fa-cog {
+    animation: spin 2s infinite linear;
+  } 
+  .loader.error-true .fa.fa-cog {
+    display: none;
+  }
+  .loader.error-false .fa.fa-exclamation-circle {
+    display: none;
+  }
+  .loader .fa.fa-exclamation-circle {
+    color: #840000;
+  }
+
+  .loader .label {
+    text-align: center;
+    font-size: @font_size_small;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin-top: 15px;
+  }
+
+.view-detecting.loading-true .detection-zone, 
+.view-detecting.loading-true .detection-zone > *,
+.view-selecting.loading-true .file-list,
+.view-selecting.loading-true .file-list > * {
+  display: none;
+}
+
+.view {  
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.view-detecting, .detection-zone {
+  display: flex;
+  width: 100%; height: 100%;
+}
+  .view-detecting .drop-zone {
+    outline: 0;
+    border: 0;
+    color: transparent;
+    text-align: center;
+    box-sizing: border-box;
+    position: absolute;
+    top: 18px; left: 17px; right: 17px; bottom: 18px;
+    opacity: 1;
+    border: 3px dashed @line_color;
+    border-radius: 10px;
+  }
+  .view-detecting .drop-zone.drag-over-true {
+    border: 3px dashed @line_color_active;
+  }
+  .view-detecting .drop-zone-overlay {
+    width: 77px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: @background_color;
+  }
+  .view-detecting .drop-notice {
+    display: block;
+    margin: auto;
+    z-index: 1000;
+    pointer-events: none;
+    text-align: center;
+  }
+    .view-detecting .drop-notice .fa {
+      color: @color_4;
+      font-size: @font_size_large;
+    }
+    .view-detecting .drop-notice.drag-over-true .fa {
+      color: @color_2;
+    }
+    .view-detecting .drop-notice label {
+      .instruction-label();
+      margin-top: 15px;
+      display: block;
+    }
+    .view-detecting .drop-notice.drag-over-true label {
+      color: @color_2;
+    }
+
+.view-selecting {
+  display: flex;
+}
+  .view-selecting .file-list {
+    margin: auto;
+  }
+  .view-selecting .file-list label {
+    .instruction-label();
+  }
+  .view-selecting .file-list ul {
+    margin-top: 30px;
+  }
+    .view-selecting .file-list ul li {
+      list-style: none;
+      cursor: pointer;
+      background: #161616;
+      display: flex;
+      width: 100;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+    .view-selecting .file-list ul li:hover {
+      opacity: 0.8;
+    }
+      .view-selecting .file-list ul li .title {
+        color: @color_2;
+        font-size: 16px;
+        display: inline-block;
+        font-weight: 400;
+        padding: 20px;
+        flex: 20;
+      }
+      .view-selecting .file-list ul li .label {
+        color: @color_3;
+        font-weight: 300;
+        padding: 20px;
+        box-sizing: border-box;
+        border-left: 1px solid #000;
+        width: 80px;
+        text-align: center;
+      }
+      .view-selecting .file-list ul li .button {
+        color: @color_1;
+        padding: 20px;
+        box-sizing: border-box;
+        border-left: 1px solid #000;
+        width: 60px;
+        text-align: center;
+      }
+
+.view-streaming .stream-status {
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+  .stream-status .status-title {
+    color: @color_4;
+    text-align: center;
+  }
+    .stream-status .status-title span {
+      font-style: italic;
+      color: @color_5;
+    }
+
+  .stream-status .stream-title {
+    font-size: 21px;
+    color: #ddd;
+    font-weight: bold;
+    margin-top: 14px;
+  }
+  .stream-status .progress-count {
+    font-size: 68px;
+    color: #eee;
+    font-weight: bold;
+    margin-top: 55px;
+    margin-left: 31px;
+  }
+    .stream-status .progress-count span {
+      font-size: @font_size_large;
+      color: @color_5;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+
+  .stream-status .progress-bar-container {
+    position: relative;
+    margin: 10px auto 0;
+    width: 44%;
+    height: 8px;
+    background: @background_color_active;  
+    min-width: 300px;
+  }
+    .stream-status .progress-bar {
+      height: 100%;
+      background: #ddd;
+      transition: 300ms linear width;
+    }
+
+  .stream-status .network-throughput {
+    position: relative;
+    margin: 36px auto 0;
+  }
+    .stream-status .network-throughput .traffic {
+      display: inline-block;
+      color: @color_4;
+      font-size: 16px;
+      margin: 0 10px;
+      vertical-align: middle;
+    }
+    .stream-status .network-throughput .traffic .fa {
+      color: @color_5;
+      margin-right: 7px;
+    }
+    .stream-status .network-throughput .download .fa {
+      position: relative;
+      top: 1px;
+    }
+
+  .stream-status .peers {
+    color: @color_5;
+    font-size: @font_size_small;
+    margin-top: 10px;
+  }
+    .stream-status .peers span {
+      color: @color_4;
+    }
+
+  .stream-status .download-info {
+    margin-top: 45px;
+  }
+    .stream-status .download-info p {
+      display: block;
+      color: @color_5;
+      font-size: @font_size_small;
+      line-height: 1.66;
+    }
+      .stream-status .download-info p span {
+        color: @color_4;
+      }

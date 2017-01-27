@@ -1,0 +1,47 @@
+{
+  "name": "superflix",
+  "productName": "superflix",
+  "version": "1.0.0",
+  "description": "Interface for streaming torrents to VLC on Mac OS X",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "keywords": [],
+  "author": "Gunzenhauser",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "make_targets": {
+        "darwin": [
+          "dmg"
+        ]
+      },
+      "electronPackagerConfig": {
+        "icon": "icon/app.icns"
+      }
+    }
+  },
+  "dependencies": {
+    "body-parser": "1.16.0",
+    "electron-compile": "5.1.3",
+    "express": "4.13.4",
+    "react": "15.1.0",
+    "react-dom": "15.1.0",
+    "socket.io": "1.7.2",
+    "socket.io-client": "1.7.2",
+    "torrent-stream-vlc": "0.2.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "1.1.8",
+    "babel-preset-es2015-node6": "0.4.0",
+    "babel-preset-react": "6.22.0",
+    "electron-osx-sign": "^0.4.3",
+    "electron-prebuilt-compile": "1.4.15"
+  }
+}
