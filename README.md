@@ -9,6 +9,9 @@ Built with electron and reactjs using <a href="https://github.com/electron-userl
 ## Download
 You can download the latest version <a href="https://github.com/JanGunzenhauser/superflix/releases/download/v1.0.0/superflix.dmg">here</a>.
 
+## Screenshots
+Download app screenshots <a href="https://github.com/JanGunzenhauser/superflix/releases/download/v1.0.0/screenshots.zip">here</a>.
+
 ## Development
 
     // clone the repo and cd into the directory
@@ -25,9 +28,5 @@ You can download the latest version <a href="https://github.com/JanGunzenhauser/
 
     // bundle .dmg file
     npm run make
-
-## Screenshots
-
-Download app screenshots <a href="https://github.com/JanGunzenhauser/superflix/releases/download/v1.0.0/screenshots.zip">here</a>.
 
 
