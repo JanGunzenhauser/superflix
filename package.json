@@ -1,8 +1,8 @@
 {
   "name": "superflix",
   "productName": "superflix",
-  "version": "1.0.0",
-  "description": "Interface for streaming torrents to VLC on Mac OS X",
+  "version": "1.0.1",
+  "description": "Interface for streaming torrents to VLC on MacOS",
   "main": "app/index.js",
   "scripts": {
     "start": "electron-forge start",
