@@ -4,12 +4,12 @@
  */
 /* FONT PATH
  * -------------------------- */
-@font-face {
-  font-family: 'FontAwesome';
+/* @font-face {
+  font-family: FontAwesome;
   src: url('../fonts/fontawesome-webfont.eot');
   font-weight: normal;
   font-style: normal;
-}
+} */
 .fa {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
