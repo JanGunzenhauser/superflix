@@ -7,7 +7,7 @@ Built with electron and reactjs using <a href="https://github.com/electron-userl
 - VLC for MacOS (https://www.videolan.org/vlc/download-macosx.html)
 
 ## Download
-You can download the latest version <a href="https://github.com/JanGunzenhauser/superflix/releases/download/v1.0.0/superflix.dmg">here</a>.
+You can download the latest version <a href="https://github.com/JanGunzenhauser/superflix/releases/latest">here</a>.
 
 ## Screenshots
 Download app screenshots <a href="https://github.com/JanGunzenhauser/superflix/releases/download/v1.0.0/screenshots.zip">here</a>.
