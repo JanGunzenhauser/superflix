@@ -13,7 +13,7 @@
     "node": ">= 6.0"
   },
   "keywords": [],
-  "author": "Gunzenhauser",
+  "author": "Jan Gunzenhauser <info@jangunzenhauser.de> (https://jangunzenhauser.de)",
   "license": "MIT",
   "config": {
     "forge": {
